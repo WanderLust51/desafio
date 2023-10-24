@@ -14,7 +14,6 @@ export class DescripcionComponent implements OnInit {
   }
 
   constructor(private route: ActivatedRoute){
-    console.log('aee')
 
   }
 
@@ -93,6 +92,5 @@ export class DescripcionComponent implements OnInit {
   ];
 
   id : any = this.route.snapshot.paramMap.get('id')
-  art = this.articulos[this.id]
-
+  art = this.articulos[this.id - 1]
 }
