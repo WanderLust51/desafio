@@ -1,12 +1,22 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-descripcion',
+  templateUrl: './descripcion.component.html',
+  styleUrls: ['./descripcion.component.scss']
 })
-export class AppComponent {
-  title = 'desafio';
+export class DescripcionComponent implements OnInit {
+
+  ngOnInit(): void {
+    // console.log('aee')
+  }
+
+  constructor(private route: ActivatedRoute){
+    console.log('aee')
+
+  }
 
   articulos = [
     {
@@ -81,4 +91,8 @@ export class AppComponent {
     },
     
   ];
+
+  id : any = this.route.snapshot.paramMap.get('id')
+  art = this.articulos[this.id]
+
 }
